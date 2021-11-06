@@ -4,6 +4,9 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="%PUBLIC_URL%/style.css">
+    <link rel="stylesheet" href="%PUBLIC_URL%/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
@@ -24,10 +27,30 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>UbiWeather - Weather Anywhere and Everywhere</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>Enable JavaScript for the optimal experience.</noscript>
+    <header style="background-color: blueviolet;opacity: inherit;">
+      <nav style="display: inline-flex;">
+          <div class="title"><img src="%PUBLIC_URL%/images/weather_app_icon.png" style="height: 75px; width: 75px;" alt="App Logo">UbiWeather</div>
+          <ul class="options">
+              <a href="#Option1" style="color:lime;">Option 1</a>
+              <a href="#Option2" style="color:lime;">Option 2</a>
+              <a href="#Option3" style="color:lime;">Option 3</a>
+              <a href="#Option4" style="color:lime;">Option 4</a>
+          </ul>
+      </nav>
+    </header>
+    <nav class="Navbar">
+        <div class="Title">
+            <h1 class="TitleText">UbiWeather</h1>
+        </div>
+        <div class="searchBar">
+            <input type="text" placeholder="Enter city name...">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
+    </nav>
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -39,5 +62,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <!-- <script src="main.js"></script> -->
   </body>
 </html>

@@ -1,0 +1,59 @@
+.Navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10pt;
+    background-color: rgba(137, 43, 226, 0.99);
+    min-height: 11.5vh;
+    width: 100%;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.Navbar input[type=text]{
+    padding: 15px;
+    border: none;
+    background-color: rgb(175, 175, 175);
+    width: 400px;
+    min-width: 50px;
+    max-width: 400px;
+}
+
+.Navbar button[type=submit]{
+    padding: 15px;
+    cursor: pointer;
+    border: none;
+    background-color: rgba(0, 0, 255, 0.7);
+}
+
+.Title{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    justify-self: start;
+    margin-left: 20px;
+}
+
+.TitleText{
+    font-size: 50pt;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: lighter;
+}
+
+.searchBar{
+    display: inline-flex;
+    justify-self: end;
+    margin-right: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
