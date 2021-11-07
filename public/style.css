@@ -1,8 +1,5 @@
 *{
-    box-sizing: border-box;
     scroll-behavior: smooth;
-    margin: 0;
-    padding:0;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -45,8 +42,7 @@ body::before{
     right:0px;
     left: 0px;
     bottom: 0px;
-    background-image: url("%PUBLIC_URL%/clouds.gif");
-    background-color: gray;
+    background-image: url("%PUBLIC_URL%/logo192.png");
     background-repeat: no-repeat;
     background-size:cover;
     background-position: top center;
