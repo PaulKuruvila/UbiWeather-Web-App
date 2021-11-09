@@ -5,10 +5,11 @@
     align-items: center;
     justify-content: flex-end;
     background-color: rgba(195, 223, 224, 0.9);
-    min-height: 11.5vh;
+    min-height: 1rem;
     width: 100vw;
     white-space: nowrap;
     z-index: 2;
+    padding-bottom: 1rem;
 }
 
 .Title{
@@ -20,7 +21,6 @@
 }
 
 .TitleLogo{
-    cursor: help;
     content:'';
     background-image: url('/src/images/weather_app_icon.png');
     background-repeat: no-repeat;
@@ -35,34 +35,43 @@
     font-weight: lighter;
 }
 
-.Options{
-    display: flex;
-    padding-right: 1rem;
-    gap: 1rem;
-    align-items: center;
-}
-
 .Search{
+    display: flex;
+    padding-left: 1rem;
     align-items: baseline;
     align-self: center;
+    justify-self: center;
+    margin-right: auto;
 }
 
 .SearchBar{
-    background-color: rgba(152, 152, 152, 0.9);
+    background: url(/src/images/clouds1.gif) no-repeat 0px -100px;
+    background-color: aliceblue;
     width: 350px;
-    border-style:double;
-    padding: 8px;
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 50px;
+    border: 1px solid #000000;
+	border-radius: 30px;
 }
 
 .SearchBar::placeholder{
+    color: blue;
+}
+
+.SearchBar:hover::placeholder{
     color: black;
 }
 
 .SearchBar:hover{
-    background-color: aliceblue;
+    background: #000000;
+    background-color: rgba(152, 152, 152, 0.9);
 }
 
 .SearchButton{
+    position: relative;
+    border-radius: 30px;
+    right: 63px;
     border-style: none;
     background-color: limegreen;
     padding: 10px;
@@ -75,8 +84,9 @@
 
 .Icons{
     display: flex;
-    gap: 10px;
+    gap: 1rem;
     font-size: 20pt;
+    margin-right: 1rem;
 }
 
 .fa-github{
@@ -95,4 +105,53 @@
 
 .fa-linkedin:hover{
     color: rgb(0, 66, 220);
+}
+
+@media screen and (max-width:509px) {
+    .NavItems{
+        padding-bottom: 31px;
+    }
+
+    .Title{
+        margin-right: auto;
+    }
+
+    .TitleText{
+        font-size: 25pt;
+    }
+
+    .TitleLogo{
+        width: 50px;
+        height: 50px;
+    }
+
+    .SearchBar{
+        width: 300px;
+        margin-right: 0px;
+    }
+
+    .Icons{
+        position: relative;
+        bottom: 45px;
+        margin-right: 1rem;
+    }
+}
+
+@media screen and (max-width:459px) {
+    .NavItems{
+        padding-bottom: 0px;
+    }
+
+    .Search{
+        position: relative;
+        top: 10px;
+        left: 30px;
+    }
+
+    .Icons{
+        position: relative;
+        bottom: 75px;
+        margin-right: 1rem;
+        padding-bottom: 0px;
+    }
 }
