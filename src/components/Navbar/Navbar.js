@@ -11,6 +11,7 @@ function Navbar() {
                     <h1 className="TitleText">UbiWeather</h1>
                 </li>
                 <li className="Search">
+                    <i className="fa fa-search" aria-hidden="true"></i>
                     <input className="SearchBar" type="text" placeholder="Please enter a city name." />
                     <button className="SearchButton" type="submit">Search</button>
                 </li>

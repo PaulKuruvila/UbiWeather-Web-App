@@ -37,44 +37,38 @@
 
 .Search{
     display: flex;
-    padding-left: 1rem;
-    align-items: baseline;
+    width: 500px;
+    height: 40px;
+    background-color: white;
+    border-radius: 30px;
+    padding-left: 15px;
+    align-items: center;
     align-self: center;
     justify-self: center;
     margin-right: auto;
+    margin-left: 2rem;
+}
+
+.Search > i{
+    font-size: 12pt;
 }
 
 .SearchBar{
-    background: url(/src/images/clouds1.gif) no-repeat 0px -100px;
-    background-color: aliceblue;
-    width: 350px;
-    padding: 10px;
+    flex: 1;
+    height: 40px;
+    border: none;
+    outline: none;
     padding-left: 10px;
-    padding-right: 50px;
-    border: 1px solid #000000;
-	border-radius: 30px;
-}
-
-.SearchBar::placeholder{
-    color: blue;
-}
-
-.SearchBar:hover::placeholder{
-    color: black;
-}
-
-.SearchBar:hover{
-    background: #000000;
-    background-color: rgba(152, 152, 152, 0.9);
+    padding-right: 10px;
 }
 
 .SearchButton{
-    position: relative;
+    font-size: 12pt;
+    padding: 11px;
+    border:none;
     border-radius: 30px;
-    right: 63px;
-    border-style: none;
-    background-color: limegreen;
-    padding: 10px;
+    color: black;
+    background-color:limegreen;
     cursor: pointer;
 }
 
@@ -86,7 +80,7 @@
     display: flex;
     gap: 1rem;
     font-size: 20pt;
-    margin-right: 1rem;
+    margin-right: 2rem;
 }
 
 .fa-github{
@@ -125,8 +119,8 @@
         height: 50px;
     }
 
-    .SearchBar{
-        width: 300px;
+    .Search{
+        width: 325px;
         margin-right: 0px;
     }
 
@@ -145,7 +139,7 @@
     .Search{
         position: relative;
         top: 10px;
-        left: 30px;
+        right: 20px;
     }
 
     .Icons{
@@ -153,5 +147,6 @@
         bottom: 75px;
         margin-right: 1rem;
         padding-bottom: 0px;
+        justify-content: space-around;
     }
 }
