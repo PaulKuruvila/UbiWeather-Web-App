@@ -12,8 +12,6 @@ function App() {
       <div className="main">
         <Display city={cityName}/>
       </div>
-      <h3>{cityName}</h3>
-      <p>Display Weather Data Here</p>
     </div>
   );
 }
