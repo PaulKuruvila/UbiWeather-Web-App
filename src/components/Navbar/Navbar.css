@@ -5,8 +5,7 @@
     align-items: center;
     justify-content: flex-end;
     background-color: rgba(195, 223, 224, 0.9);
-    min-height: 1rem;
-    width: 100vw;
+    min-height: 10vh;
     white-space: nowrap;
     z-index: 2;
     padding-bottom: 1rem;
