@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node backend_express/server.js",
-    "build": "cd frontend_react && npm install && npm run build"
+    "build": "cd frontend_react && npm install && npm run build && cd .."
   },
   "keywords": [],
   "author": "",
