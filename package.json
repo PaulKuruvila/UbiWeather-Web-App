@@ -4,7 +4,7 @@
   "description": "",
   "main": "backend_express/server.js",
   "scripts": {
-    "start": "nodemon backend_express/server.js",
+    "start": "node backend_express/server.js",
     "build": "cd frontend_react && npm install && npm run build && cd .."
   },
   "keywords": [],
