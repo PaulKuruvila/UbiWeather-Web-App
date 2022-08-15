@@ -12,9 +12,11 @@
 
 # production
 /build
+/frontend_react/build
 
 # misc
 .DS_Store
+.sample.env
 .env
 .env.local
 .env.development.local

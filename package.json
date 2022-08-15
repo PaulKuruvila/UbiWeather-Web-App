@@ -2,9 +2,9 @@
   "name": "heroku_deploy",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "backend_express/server.js",
   "scripts": {
-    "start": "node backend_express/server.js",
+    "start": "nodemon backend_express/server.js",
     "build": "cd frontend_react && npm install && npm run build && cd .."
   },
   "keywords": [],
