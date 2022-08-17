@@ -4,6 +4,7 @@ const path = require('path');
 const app = express();
 require('dotenv').config();
 const XMLHttpRequest = require('xhr2');
+const { response } = require('express');
 const port = process.env.PORT || 5000;
 const API_KEY = process.env.API_KEY;
 
@@ -31,19 +32,19 @@ var getWeatherData = function(url, callback) {
     xhr.send();
 };
 
-app.get("/searchCity", (req, res) => {
+app.post("/search", (req, res) => {
     let city = req.body.city;
+    console.log(`City requested: -->${city}<--`);
     if (city === undefined) {
         console.log("No city requested, defaulting to Sugar Land, Texas.");
         city = "Sugar Land";
     }
-    console.log(`City requested: -->${city}<--`);
     city = fixCityNameSpaces(city);
     let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
     getWeatherData(url, function(error, data) {
         if (error !== null) {
             console.log(`Error fetching city data: ${error}`);
-            res.send(`Error fetching city data: ${error}`);
+            res.status(404).send(`Error fetching city data: ${error}`);
         } else {
             console.log(data);
             res.send({

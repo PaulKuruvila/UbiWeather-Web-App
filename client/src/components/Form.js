@@ -4,31 +4,41 @@ import Display from './Display/Display';
 
 const Form = ({ cityName, setCity }) => {
 
-    const fetchData = async (e) => {
-        const city = cityName;
-        const options = {
-            method: 'GET',
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(city)
-        };
-
-        const response = await fetch('/searchCity', options);
-        const jsonData = await response.json();
-        console.log("Data fetched:");
-        console.log(jsonData);
-
-        Display(city, jsonData);
-    }
-
     const changeHandler = (e) => {
-        console.log(`Search bar: ${e.target.value}`);
+        // console.log(`Search bar: ${e.target.value}`);
         setCity(e.target.value);
     }
 
-    const searchHandler = (e) => {
+    const searchHandler = async (e) => {
         e.preventDefault();
-        console.log(`Searching for ${cityName}...`);
-        fetchData(e);
+        const city = cityName;
+        const cityRequested = {city};
+        console.log(`Searching for ${city}...`);
+        const options = {
+            method: 'POST',
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(cityRequested)
+        };
+
+        const response = await fetch('/search', options);
+        try {
+            const jsonData = await response.json();
+            if (response.status === 200) {
+                console.log("Data fetched:");
+                console.log(jsonData);
+                Display(city, jsonData);
+            } else {
+                console.log(`Error retrieving data for city: ${response.status}`);
+            }
+        } catch (error) {
+            let error_msg = "Error occurred when trying to fetch data for city specified.";
+            if (response.status === 404) {
+                console.log(error_msg, "City not found. Verify that the city requested is valid.")
+            } else {
+                console.log(error_msg, "(Unexpected error)");
+            }
+        }
+
         setCity("");
     }
 
