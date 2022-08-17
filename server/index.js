@@ -31,7 +31,7 @@ var getWeatherData = function(url, callback) {
     xhr.send();
 };
 
-app.get("/searchCity", (req,res) => {
+app.get("/searchCity", (req, res) => {
     let city = req.body.city;
     if (city === undefined) {
         console.log("No city requested, defaulting to Sugar Land, Texas.");
