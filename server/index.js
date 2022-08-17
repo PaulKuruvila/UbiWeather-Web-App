@@ -3,9 +3,7 @@ const cors = require('cors');
 const path = require('path');
 const app = express();
 require('dotenv').config();
-const axios = require('axios');
 const XMLHttpRequest = require('xhr2');
-const { response } = require('express');
 const port = process.env.PORT || 5000;
 const API_KEY = process.env.API_KEY;
 
@@ -50,13 +48,6 @@ app.get("/searchCity", (req,res) => {
             });
         }
     });
-    // axios.get(url).then(function (response) {
-    //     //console.log(response);
-    //     res.send(response);
-    // }).catch(function (error) { // if request is invalid
-    //     //console.log(error);
-    //     //res.status(404).send(`City requested: ${city}. Error fetching city data.`);
-    // })
 });
 
 app.get("/api", (req, res) => {
