@@ -33,6 +33,10 @@ var getWeatherData = function(url, callback) {
 
 app.get("/searchCity", (req,res) => {
     let city = req.body.city;
+    if (city === undefined) {
+        console.log("No city requested, defaulting to Sugar Land, Texas.");
+        city = "Sugar Land";
+    }
     console.log(`City requested: -->${city}<--`);
     city = fixCityNameSpaces(city);
     let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;

@@ -1,11 +1,11 @@
 import React from 'react';
 import './Display.css';
 
-function Display({city}) {
+function Display({city, dataToDisplay}) {
     return (
         <div className="container">
             <h3>{city}</h3>
-            <p>Display Weather Data Here</p>
+            <div>{dataToDisplay}</div>
         </div>
     )
 }
