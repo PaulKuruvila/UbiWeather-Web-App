@@ -3,11 +3,61 @@ const cors = require('cors');
 const path = require('path');
 const app = express();
 require('dotenv').config();
+const axios = require('axios');
+const XMLHttpRequest = require('xhr2');
+const { response } = require('express');
 const port = process.env.PORT || 5000;
+const API_KEY = process.env.API_KEY;
 
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../client/build')));
+
+function fixCityNameSpaces(cityName){
+    cityName = cityName.replace(/ /g, "%20"); // replace all spaces in city name with %20
+    return cityName;
+}
+
+var getWeatherData = function(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
+      var status = xhr.status;
+      if (status === 200) {
+        callback(null, xhr.response);
+      } else {
+        callback(status, xhr.response);
+      }
+    };
+    xhr.send();
+};
+
+app.get("/searchCity", (req,res) => {
+    let city = req.body.city;
+    console.log(`City requested: -->${city}<--`);
+    city = fixCityNameSpaces(city);
+    let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
+    getWeatherData(url, function(error, data) {
+        if (error !== null) {
+            console.log(`Error fetching city data: ${error}`);
+            res.send(`Error fetching city data: ${error}`);
+        } else {
+            console.log(data);
+            res.send({
+                status: 200,
+                data
+            });
+        }
+    });
+    // axios.get(url).then(function (response) {
+    //     //console.log(response);
+    //     res.send(response);
+    // }).catch(function (error) { // if request is invalid
+    //     //console.log(error);
+    //     //res.status(404).send(`City requested: ${city}. Error fetching city data.`);
+    // })
+});
 
 app.get("/api", (req, res) => {
     res.json({message: `Fake api key is ${process.env.FAKE_API_KEY}!!!`})
