@@ -1,15 +1,12 @@
 import React, {useState} from 'react';
 import './Display.css';
 
-function Display() {
-
-    const [city, getCity] = useState('Sugar Land');
-    const [dataToDisplay, fetchData] = useState();
+const Display = props => {
 
     return (
         <div className="container">
-            <h3>{city}</h3>
-            <div>{dataToDisplay}</div>
+            <h3>{props.city}</h3>
+            <div>{props.dataToDisplay}</div>
         </div>
     )
 }

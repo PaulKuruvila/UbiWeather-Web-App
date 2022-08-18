@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <Navbar />
       <div className="main">
-        <Display />
+        <Display city={'Sugar Land'} dataToDisplay={'Something to display.'}/>
       </div>
     </div>
   );

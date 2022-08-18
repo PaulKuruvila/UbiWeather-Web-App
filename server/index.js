@@ -53,9 +53,9 @@ app.post("/search", (req, res) => {
                 country: data['sys']['country'],
                 coord: data['coord'],
                 weather: data['weather'],
-                current_temp: data['main']['temp'],
-                high_temp: data['main']['temp_max'],
-                low_temp: data['main']['temp_min']
+                temp_current: data['main']['temp'],
+                temp_high: data['main']['temp_max'],
+                temp_low: data['main']['temp_min']
             });
         }
     });

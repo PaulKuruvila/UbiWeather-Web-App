@@ -4,7 +4,7 @@ import './Navbar/Navbar.css';
 const Form = () => {
 
     const [cityName, setCity] = useState();
-    const [data, setData] = useState();
+    const [cityData, setCityData] = useState({name:'',coord:'',weather:'',icon:'',temp_current:'',temp_high:'',temp_low:''});
 
     const changeHandler = (e) => {
         // console.log(`Search bar: ${e.target.value}`);
@@ -28,8 +28,8 @@ const Form = () => {
             if (response.status === 200) {
                 console.log("Data fetched:");
                 console.log(jsonData);
-                setData(jsonData);
-                alert(`City: ${jsonData['city']}\nCoordinates: ${jsonData['coord']['lat']}, ${jsonData['coord']['lon']}\nWeather: ${jsonData['weather'][0]['description']}\nCurrent temp: ${jsonData['current_temp']}°C\nHigh: ${jsonData['high_temp']}°C\nLow: ${jsonData['low_temp']}°C`);
+                setCityData({name:jsonData['city'], coord:`(${jsonData['coord']['lat']}°, ${jsonData['coord']['lon']}°)`, weather: jsonData['weather'][0]['description'], icon: jsonData['weather'][0]['icon'], temp_current: `${jsonData['temp_current']}°C`, temp_high: `${jsonData['temp_high']}°C`, temp_low: `${jsonData['temp_low']}°C`});
+                alert(`City: ${jsonData['city']}\nCoordinates: (${jsonData['coord']['lat']}°, ${jsonData['coord']['lon']}°)\nWeather: ${jsonData['weather'][0]['description']}\nCurrent temp: ${jsonData['temp_current']}°C\nHigh: ${jsonData['temp_high']}°C\nLow: ${jsonData['temp_low']}°C`);
             } else {
                 console.log(`Error retrieving data for city: ${response.status}`);
             }
