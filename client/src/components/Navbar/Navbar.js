@@ -4,8 +4,6 @@ import Form from '../Form.js';
 
 
 const Navbar = () => {
-    const [cityName, setCity] = useState("");
-
     return (
         <nav>
             <ul className="NavItems">
@@ -13,7 +11,7 @@ const Navbar = () => {
                     <div className="TitleLogo"></div>
                     <h1 className="TitleText">UbiWeather</h1>
                 </li>
-                <Form cityName={cityName} setCity={setCity} />
+                <Form />
                 <li className="Icons">
                     <a href="https://github.com/PaulKuruvila" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                     <a href="https://linkedin.com/in/paulkuruvila" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
