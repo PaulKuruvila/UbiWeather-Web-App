@@ -4,13 +4,11 @@ import Display from './components/Display/Display';
 
 function App() {
 
-  const cityName = "Sugar Land";
-
   return (
     <div className="App">
       <Navbar />
       <div className="main">
-        <Display city={cityName}/>
+        <Display />
       </div>
     </div>
   );

@@ -46,10 +46,16 @@ app.post("/search", (req, res) => {
             console.log(`Error fetching city data: ${error}`);
             res.status(404).send(`Error fetching city data: ${error}`);
         } else {
-            console.log(data);
+            console.log(data['coord']);
             res.send({
                 status: 200,
-                data
+                city: `${data['name']}, ${data['sys']['country']}`,
+                country: data['sys']['country'],
+                coord: data['coord'],
+                weather: data['weather'],
+                current_temp: data['main']['temp'],
+                high_temp: data['main']['temp_max'],
+                low_temp: data['main']['temp_min']
             });
         }
     });

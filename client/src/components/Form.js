@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import Display from './Display/Display';
 import './Navbar/Navbar.css';
 
 const Form = () => {
 
     const [cityName, setCity] = useState();
+    const [data, setData] = useState();
 
     const changeHandler = (e) => {
         // console.log(`Search bar: ${e.target.value}`);
@@ -28,13 +28,15 @@ const Form = () => {
             if (response.status === 200) {
                 console.log("Data fetched:");
                 console.log(jsonData);
+                setData(jsonData);
+                alert(`City: ${jsonData['city']}\nCoordinates: ${jsonData['coord']['lat']}, ${jsonData['coord']['lon']}\nWeather: ${jsonData['weather'][0]['description']}\nCurrent temp: ${jsonData['current_temp']}°C\nHigh: ${jsonData['high_temp']}°C\nLow: ${jsonData['low_temp']}°C`);
             } else {
                 console.log(`Error retrieving data for city: ${response.status}`);
             }
         } catch (error) {
             let error_msg = "Error occurred when trying to fetch data for city specified:";
             if (response.status === 404) {
-                console.log(error_msg, "City not found. Verify that the city requested is valid.")
+                console.log(error_msg, "City not found. Verify that the city requested is valid.");
             } else {
                 console.log(error_msg, "Unexpected error.");
             }

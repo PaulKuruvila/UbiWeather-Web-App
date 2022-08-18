@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import './Display.css';
 
 function Display() {
 
     const [city, getCity] = useState('Sugar Land');
-    const [dataToDisplay, fetchData] = useState('Display Data Here');
+    const [dataToDisplay, fetchData] = useState();
 
     return (
         <div className="container">
