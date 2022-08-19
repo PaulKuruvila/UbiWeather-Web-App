@@ -1,0 +1,80 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main{
+    min-height: 90vh;
+    position: relative;
+    &::before {
+        content: "";
+        background-image: url('./images/cloud.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: absolute;
+        inset: 0;
+        opacity: 0.4;
+        animation: background-opacity 10s linear infinite;
+    }
+}
+
+@keyframes background-opacity {
+    0% {
+        opacity: 0.4;
+    }
+
+    12% {
+        opacity: 0.5;
+    }
+
+    25% {
+        opacity: 0.6;
+    }
+
+    37% {
+        opacity: 0.7;
+    }
+
+    50%{
+        opacity: 0.8;
+    }
+
+    62% {
+        opacity: 0.7;
+    }
+
+    75% {
+        opacity: 0.6;
+    }
+
+    87% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0.4;
+    }
+}
+
+// @keyframes background-colors {
+//     0% {
+//         background-color: rgba(85, 30, 225, 0.6);
+//     }
+
+//     25% {
+//         background-color: rgb(75, 20, 215, 0.6);
+//     }
+
+//     50% {
+//         background-color: rgb(145, 60, 208, 0.6);
+//     }
+
+//     75% {
+//         background-color: rgb(75, 20, 215, 0.6);
+//     }
+
+//     100%{
+//         background-color: rgb(36, 20, 215, 0.6);
+//     }
+// }
