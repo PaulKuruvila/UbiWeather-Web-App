@@ -4,7 +4,9 @@ import './Navbar/Navbar.css';
 const Form = () => {
 
     const [cityName, setCity] = useState();
-    const [cityData, setCityData] = useState({name:'',coord:'',weather:'',icon:'',temp_current:'',temp_high:'',temp_low:''});
+
+    // try passing data here as parameters to function in parent component & have useState hook to store/update the values
+    const [cityData, setCityData] = useState({name:'City',coord:'Coordinates',weather:'Weather',icon:'Icon',temp_current:'Current',temp_high:'High',temp_low:'Low'});
 
     const changeHandler = (e) => {
         // console.log(`Search bar: ${e.target.value}`);
@@ -46,11 +48,14 @@ const Form = () => {
     }
 
     return (
-        <form className="Search">
-            <i className="fa fa-search" aria-hidden="true"></i>
-            <input onChange={changeHandler} value={cityName} className="SearchBar" type="text" placeholder="Please enter a city name." />
-            <button onClick={searchHandler} className="SearchButton" type="submit">Search</button>
-        </form>
+        <div>
+            <form className="Search">
+                <i className="fa fa-search" aria-hidden="true"></i>
+                <input onChange={changeHandler} value={cityName} className="SearchBar" type="text" placeholder="Please enter a city name." />
+                <button onClick={searchHandler} className="SearchButton" type="submit">Search</button>
+            </form>
+            <div>{`${cityData['name']}, ${cityData['coord']}, ${cityData['weather']}, ${cityData['icon']}, ${cityData['temp_current']}, ${cityData['temp_high']}, ${cityData['temp_low']}`}</div> 
+        </div>
     )
 }
 
