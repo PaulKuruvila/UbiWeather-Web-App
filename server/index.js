@@ -40,12 +40,13 @@ app.post("/search", (req, res) => {
         return;
     }
     city = fixCityNameSpaces(city);
-    let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
+    let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`;
     getWeatherData(url, function(error, data) {
         if (error !== null) {
             console.log(`Error fetching city data: ${error}`);
             res.status(404).send(`Error fetching city data: ${error}`);
         } else {
+            console.log(data);
             res.send({
                 status: 200,
                 city: `${data['name']}, ${data['sys']['country']}`,

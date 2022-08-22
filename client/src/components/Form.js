@@ -26,7 +26,7 @@ const Form = props => {
             if (response.status === 200) {
                 // console.log("Data fetched:");
                 // console.log(jsonData);
-                props.changeData({dataLoaded: true,name:jsonData['city'], coord:`(${jsonData['coord']['lat']}°, ${jsonData['coord']['lon']}°)`, weather: jsonData['weather'][0]['description'], icon: jsonData['weather'][0]['icon'], temp_current: `${jsonData['temp_current']}°C`, temp_high: `${jsonData['temp_high']}°C`, temp_low: `${jsonData['temp_low']}°C`});
+                props.changeData({dataLoaded: true,name:jsonData['city'], coord:`(${jsonData['coord']['lat']}°, ${jsonData['coord']['lon']}°)`, weather: jsonData['weather'][0]['description'], icon: jsonData['weather'][0]['icon'], temp_current: jsonData['temp_current'], temp_high: jsonData['temp_high'], temp_low: jsonData['temp_low']});
             } else {
                 console.log(`Error retrieving data for city: ${response.status}`);
             }
@@ -48,14 +48,11 @@ const Form = props => {
     }
 
     return (
-        // <div>
-            <form className="Search">
-                <i className="fa fa-search" aria-hidden="true"></i>
-                <input onChange={changeHandler} value={cityName} className="SearchBar" type="text" placeholder="Please enter a city name." />
-                <button onClick={searchHandler} className="SearchButton" type="submit">Search</button>
-            </form>
-            //{/* <div>{`${cityData['name']}, ${cityData['coord']}, ${cityData['weather']}, ${cityData['icon']}, ${cityData['temp_current']}, ${cityData['temp_high']}, ${cityData['temp_low']}`}</div>  */}
-        //{/* </div> */}
+        <form className="Search">
+            <i className="fa fa-search" aria-hidden="true"></i>
+            <input onChange={changeHandler} value={cityName} className="SearchBar" type="text" placeholder="Please enter a city name. ex: Stafford, US" />
+            <button onClick={searchHandler} className="SearchButton" type="submit">Search</button>
+        </form>
     )
 }
 
