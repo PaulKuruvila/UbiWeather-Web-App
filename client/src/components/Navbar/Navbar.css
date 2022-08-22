@@ -4,7 +4,7 @@
     list-style: none;
     align-items: center;
     justify-content: flex-end;
-    background-color: rgba(195, 223, 224, 0.9);
+    background-color: #6571729b;
     min-height: 10vh;
     white-space: nowrap;
     z-index: 2;
@@ -100,6 +100,14 @@
 
 .fa-linkedin:hover{
     color: rgb(0, 66, 220);
+}
+
+.dataDisplayed{
+    background-color: aqua;
+    font-size: 20pt;
+    text-align: center;
+    margin: 0 auto 0 auto;
+    width: 500px;
 }
 
 @media screen and (max-width: 1020px) {
