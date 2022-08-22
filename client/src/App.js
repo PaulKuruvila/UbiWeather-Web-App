@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
+      <Navbar data={data} updateData={data => setData(data)} />
       <div className="main">
         <Display data={data} changeDataDisplayed={data => setData(data)}/>
       </div>
