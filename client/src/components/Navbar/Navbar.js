@@ -12,7 +12,7 @@ const Navbar = props => {
         <div>
             <nav>
                 <ul className="NavItems">
-                    <li className="Title">
+                    <li className="Title" onClick={() => window.location.href = '/'}>
                         <div className="TitleLogo"></div>
                         <h1 className="TitleText">UbiWeather</h1>
                     </li>
@@ -23,16 +23,6 @@ const Navbar = props => {
                     </li>
                 </ul>
             </nav>
-            <div className="dataDisplayed" style={{display: data['dataLoaded'] ? 'block' : 'none'}}>
-                <h1>{data['name']}</h1>
-                <p>{data['coord']}</p>
-                <p>{data['weather']}</p>
-                <img src={`/weather_icons/${data['icon']}.png`} alt="Image not found." />
-                <h2>Temp</h2>
-                <p>{`Current: ${data['temp_current']}`}</p>
-                <p>{`High ${data['temp_high']}`}</p>
-                <p>{`Low ${data['temp_low']}`}</p>
-            </div>
         </div>
     )
 }

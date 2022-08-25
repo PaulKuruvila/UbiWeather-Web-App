@@ -3,7 +3,7 @@
     flex-wrap: wrap;
     list-style: none;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     background-color: #6571729b;
     min-height: 10vh;
     white-space: nowrap;
@@ -13,9 +13,9 @@
 
 .Title{
     display: flex;
+    cursor: pointer;
     align-items: center;
     gap: 0px;
-    justify-self: start;
     margin-right: auto;
 }
 
@@ -42,10 +42,8 @@
     border-radius: 30px;
     padding-left: 15px;
     align-items: center;
-    align-self: center;
-    justify-self: center;
     margin-right: auto;
-    margin-left: 2rem;
+    margin-left: auto;
 }
 
 .Search > i{
@@ -81,6 +79,7 @@
     gap: 1rem;
     justify-content: space-around;
     font-size: 30pt;
+    margin-left: auto;
     margin-right: 2rem;
 }
 
@@ -102,14 +101,6 @@
     color: rgb(0, 66, 220);
 }
 
-.dataDisplayed{
-    background-color: aqua;
-    font-size: 20pt;
-    text-align: center;
-    margin: 0 auto 0 auto;
-    width: 500px;
-}
-
 @media screen and (max-width: 1020px) {
     .Search{
         width: 300px;
@@ -118,15 +109,16 @@
 
 @media screen and (max-width:509px) {
     .NavItems{
-        padding-bottom: 31px;
+        padding-bottom: 0px;
     }
 
     .Title{
         margin-right: auto;
+        margin-top: 10px;
     }
 
     .TitleText{
-        font-size: 25pt;
+        /* font-size: 25pt; */
     }
 
     .TitleLogo{
@@ -136,14 +128,13 @@
 
     .Search{
         width: 325px;
-        margin-right: 0px;
+        margin: 15px 40px 0 40px;
     }
 
     .Icons{
         position: relative;
-        bottom: 45px;
+        bottom: 98px;
         font-size: 25pt;
-        margin-right: 1rem;
     }
 }
 
@@ -151,30 +142,37 @@
     .Search{
         top: 10px;
         right: 20px;
-        width: 260px;
+        width: 278px;
+        margin-bottom: 40px;
+        margin-left: 20px;
     }
 
     .Icons{
-        margin-right: 1rem;
+        bottom: 72px;
         padding-bottom: 0px;
     }
 }
 
-@media screen and (max-width: 373px) { 
-    .NavItems{
-        padding: 0px;
-        padding-bottom: 10px;
+@media screen and (max-width:449px) {
+    .Search{
+        margin: 20px 1rem 35px 0;
     }
 
-
-    .Search{
-        margin-right: auto;
-        width: 230px;
+    .Icons{
+        bottom: -3px;
+        padding-bottom: 20px;
+        margin: 0 0 0 10px;
     }
 }
 
-@media screen and (max-width: 343px) {
+@media screen and (max-width:435px) {
+    .Search{
+        margin: 15px 50px 0 50px;
+    }
+
     .Icons{
-        top: 7px;
+        margin-left: 0px;
+        bottom: -15px;
+        padding-bottom: 25px;
     }
 }
