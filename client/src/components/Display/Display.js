@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './Display.css';
+import './Display.scss';
 
 const Display = props => {
 
@@ -25,12 +25,16 @@ const Display = props => {
     }
 
     return (
-        <div className="container" style={{display: props.data['dataLoaded'] ? 'block' : 'none'}}>
-            <button onClick={() => switchUnit()}>Change Unit (°{temp_unit})</button>
+        <div className="main-container" style={{display: props.data['dataLoaded'] ? 'block' : 'none'}}>
+            <div id="top-layer">
+                <p id="coord">{props.data['coord']}</p>
+                <button onClick={() => switchUnit()}>Change Unit (°{temp_unit})</button>
+            </div>
             <h1>{props.data['name']}</h1>
-            <p>{props.data['coord']}</p>
-            <p>{props.data['weather']}</p>
-            <img src={`/weather_icons/${props.data['icon']}.png`} alt="Image not found." />
+            <div className="weather-container-main">
+                <img src={`/weather_icons/${props.data['icon']}.png`} alt="Image not found." />
+                <p id="description">{props.data['weather']}</p>
+            </div>
             <h2>Temp</h2>
             <p>{`Current: ${props.data['temp_current']}°${temp_unit}`}</p>
             <p>{`High: ${props.data['temp_high']}°${temp_unit}`}</p>

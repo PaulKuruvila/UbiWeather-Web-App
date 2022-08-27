@@ -1,0 +1,150 @@
+.main-container{
+    display: block;
+    border-radius: 60px;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    width: 100vw;
+    height: 65vh;
+    overflow-y: scroll;
+    background-color: rgba(195, 223, 224, 0.7);
+
+    h1{
+        font-size: 35pt;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-weight: lighter;
+        margin-bottom: 1rem;
+    }
+
+    h2{
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-size: 30pt;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-weight: lighter;
+    }
+
+    #description{
+        display: flex;
+        justify-content: center;
+        color: gray;
+        background-color: white;
+        padding: 10px 0 10px 0;
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    > *{
+        max-height: 100%;
+        text-align: center;
+    }
+
+    > img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    > #top-layer{
+        display: flex;
+        align-items: center;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+
+        #coord{
+            font-size: medium;
+            color: gray;
+            margin-left: 20px;
+            margin-right: auto;
+        }
+
+        > button{
+            cursor: pointer;
+            background-color: limegreen;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            padding: 5px 5px 5px 5px;
+            margin-left: auto;
+            margin-right: 20px;
+        }
+    
+        > button:hover{
+            background-color: rgb(35, 160, 35);
+        }
+    }
+}
+
+.weather-container{
+    &-main{
+        display: block;
+        justify-content: center;
+        border: solid;
+        border-radius: 15px;
+        overflow-y: scroll;
+        // margin: 0 500px 0 500px;
+        
+        &::-webkit-scrollbar{
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width:435px) {
+    .main-container{
+        h1{
+            font-size: 22pt;
+        }
+
+        h2{
+            font-size: 18pt;
+        }
+
+        #description{
+            font-size: 16pt;
+        }
+
+        > #top-layer{
+            #coord{
+                font-size: small;
+            }
+            
+            > button{
+                font-size: 10.5px;
+            }
+        }
+
+        > p {
+            font-size: 12pt;
+        }
+    }
+
+    .weather-container{
+        &-main{
+            > img{
+                width: 190px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:509px) {
+    .main-container{
+        h1{
+            font-size: 28pt;
+        }
+
+        h2{
+            font-size: 22pt;
+        }
+
+        #description{
+            font-size: 18pt;
+        }
+
+        p{
+            font-size: 16pt;
+        }
+    }
+}
