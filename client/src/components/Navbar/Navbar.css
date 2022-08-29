@@ -84,21 +84,21 @@
 }
 
 .fa-github{
-    color: rgb(1, 160, 0);
+    color: #8DFF6D;
     text-shadow: 1px 1px 2px rgba(0,0,0,.5843137254901961);
 }
 
 .fa-github:hover{
-    color: green;
+    color: rgb(1, 160, 0);
 }
 
 .fa-linkedin{
-    color: rgb(0, 76, 255);
+    color: #99CCFF;
     text-shadow: 1px 1px 2px rgba(0,0,0,.5843137254901961);
 }
 
 .fa-linkedin:hover{
-    color: rgb(0, 66, 220);
+    color: #5CADFF;
 }
 
 @media screen and (max-width: 1020px) {

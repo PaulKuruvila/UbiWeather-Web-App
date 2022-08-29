@@ -74,16 +74,20 @@
             background-color: rgb(35, 160, 35);
         }
     }
+
+    > #bottom-layer{
+        margin-bottom: 1rem;
+    }
 }
 
 .weather-container{
     &-main{
         display: block;
-        justify-content: center;
+        width: 500px;
         border: solid;
         border-radius: 15px;
+        margin: 0 auto 0 auto;
         overflow-y: scroll;
-        // margin: 0 500px 0 500px;
         
         &::-webkit-scrollbar{
             display: none;
@@ -145,6 +149,14 @@
 
         p{
             font-size: 16pt;
+        }
+    }
+}
+
+@media screen and (max-width:675px) {
+    .weather-container{
+        &-main{
+            width: 250px;
         }
     }
 }

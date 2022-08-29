@@ -31,10 +31,12 @@ const Display = props => {
                 <img src={`/weather_icons/${props.data['icon']}.png`} alt="Image not found." />
                 <p id="description">{props.data['weather']}</p>
             </div>
-            <h2>Temp</h2>
-            <p>{`Current: ${props.data['temp_current']}°${props.data['temp_unit']}`}</p>
-            <p>{`High: ${props.data['temp_high']}°${props.data['temp_unit']}`}</p>
-            <p>{`Low: ${props.data['temp_low']}°${props.data['temp_unit']}`}</p>
+            <div id="bottom-layer">
+                <h2>Temp</h2>
+                <p>{`Current: ${props.data['temp_current']}°${props.data['temp_unit']}`}</p>
+                <p>{`High: ${props.data['temp_high']}°${props.data['temp_unit']}`}</p>
+                <p>{`Low: ${props.data['temp_low']}°${props.data['temp_unit']}`}</p>
+            </div>
         </div>
     )
 }
