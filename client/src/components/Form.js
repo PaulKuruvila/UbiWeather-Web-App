@@ -26,7 +26,7 @@ const Form = props => {
             if (response.status === 200) {
                 // console.log("Data fetched:");
                 // console.log(jsonData);
-                props.changeData({dataLoaded: true, name:jsonData['city'], coord:`(${jsonData['coord']['lat']}°, ${jsonData['coord']['lon']}°)`, weather: jsonData['weather'][0]['description'], icon: jsonData['weather'][0]['icon'], temp_current: jsonData['temp_current'], temp_high: jsonData['temp_high'], temp_low: jsonData['temp_low']});
+                props.changeData({dataLoaded: true, name:jsonData['city'], coord:`(${jsonData['coord']['lat']}°, ${jsonData['coord']['lon']}°)`, weather: jsonData['weather'][0]['description'], icon: jsonData['weather'][0]['icon'], temp_current: jsonData['temp_current'], temp_high: jsonData['temp_high'], temp_low: jsonData['temp_low'], temp_unit: 'C'});
             } else {
                 console.log(`Error retrieving data for city: ${response.status}`);
             }
