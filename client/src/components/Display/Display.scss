@@ -93,6 +93,14 @@
             display: none;
         }
     }
+
+    &-mini{
+        display: block;
+        width: fit-content;
+        border: solid;
+        border-radius: 15px;
+        margin: 0 auto 0 auto;
+    }
 }
 
 @media screen and (max-width:435px) {

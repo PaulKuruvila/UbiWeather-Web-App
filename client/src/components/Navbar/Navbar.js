@@ -5,9 +5,6 @@ import Form from '../Form.js';
 
 const Navbar = props => {
 
-    // try passing data here as parameters to function in parent component & have useState hook to store/update the values
-    const [data, setData] = useState({dataLoaded:false,name:'City',coord:'Coordinates',weather:'Weather',icon:'01d',temp_current:'Current',temp_high:'High',temp_low:'Low'});
-
     return (
         <div>
             <nav>

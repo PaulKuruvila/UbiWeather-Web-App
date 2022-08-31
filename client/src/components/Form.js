@@ -26,7 +26,11 @@ const Form = props => {
             if (response.status === 200) {
                 // console.log("Data fetched:");
                 // console.log(jsonData);
-                props.changeData({dataLoaded: true, name:jsonData['city'], coord:`(${jsonData['coord']['lat']}°, ${jsonData['coord']['lon']}°)`, weather: jsonData['weather'][0]['description'], icon: jsonData['weather'][0]['icon'], temp_current: jsonData['temp_current'], temp_high: jsonData['temp_high'], temp_low: jsonData['temp_low'], temp_unit: 'C'});
+                props.changeData({dataLoaded: true, name:jsonData['city'], coord:`(${jsonData['coord']['lat']}°, ${jsonData['coord']['lon']}°)`, weather: jsonData['weather'][0]['description'], icon: jsonData['weather'][0]['icon'], temp_current: jsonData['temp_current'], temp_high: jsonData['temp_high'], temp_low: jsonData['temp_low'], 
+                weather_forecast: [[jsonData['forecast_data']['daily'][0]['weather'][0]['icon'], jsonData['forecast_data']['daily'][0]['weather'][0]['description']], [jsonData['forecast_data']['daily'][1]['weather'][0]['icon'], jsonData['forecast_data']['daily'][1]['weather'][0]['description']], [jsonData['forecast_data']['daily'][2]['weather'][0]['icon'], jsonData['forecast_data']['daily'][2]['weather'][0]['description']], [jsonData['forecast_data']['daily'][3]['weather'][0]['icon'], jsonData['forecast_data']['daily'][3]['weather'][0]['description']], [jsonData['forecast_data']['daily'][4]['weather'][0]['icon'], jsonData['forecast_data']['daily'][4]['weather'][0]['description']], [jsonData['forecast_data']['daily'][5]['weather'][0]['icon'], jsonData['forecast_data']['daily'][5]['weather'][0]['description']], [jsonData['forecast_data']['daily'][6]['weather'][0]['icon'], jsonData['forecast_data']['daily'][6]['weather'][0]['description']], [jsonData['forecast_data']['daily'][7]['weather'][0]['icon'], jsonData['forecast_data']['daily'][7]['weather'][0]['description']]], 
+                temp_unit: 'C'});
+                console.log("Weather forecast fetched:");
+                console.log(jsonData['forecast_data']);
             } else {
                 console.log(`Error retrieving data for city: ${response.status}`);
             }
