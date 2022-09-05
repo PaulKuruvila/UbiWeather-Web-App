@@ -80,11 +80,6 @@
     }
 
     #weekly_forecast{
-        &::before{
-            content: '';
-            border-top: 3px solid gray;
-        }
-
         flex-wrap: wrap;
         gap: 1em;
         justify-content: space-around;
