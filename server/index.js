@@ -31,6 +31,7 @@ var getWeatherData = function(url, callback) {
     xhr.send();
 };
 
+// makes 2 API calls to receive weather for current day as well as forecast for the week
 app.post("/search", (req, res) => {
     let city = req.body.city;
     console.log(`City requested: -->${city}<--`);
@@ -47,16 +48,26 @@ app.post("/search", (req, res) => {
             res.status(404).send(`Error fetching city data: ${error}`);
         } else {
             console.log(data);
-            res.send({
-                status: 200,
-                city: `${data['name']}, ${data['sys']['country']}`,
-                country: data['sys']['country'],
-                coord: data['coord'],
-                weather: data['weather'],
-                temp_current: data['main']['temp'],
-                temp_high: data['main']['temp_max'],
-                temp_low: data['main']['temp_min']
-            });
+            let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${data['coord']['lat']}&lon=${data['coord']['lon']}&exclude=current,minutely,hourly,alerts&units=metric&appid=${API_KEY}`;
+            getWeatherData(url, function(err, forecast_data) {
+                if (err !== null) {
+                    console.log(`Error fetching weather forecast data: ${err}`);
+                    res.status(404).send(`Error fetching weather forecast data: ${err}`);
+                } else {
+                    console.log(forecast_data['daily'][0]['weather']);
+                    res.send({
+                        status: 200,
+                        city: `${data['name']}, ${data['sys']['country']}`,
+                        country: data['sys']['country'],
+                        coord: data['coord'],
+                        weather: data['weather'],
+                        temp_current: data['main']['temp'],
+                        temp_high: data['main']['temp_max'],
+                        temp_low: data['main']['temp_min'],
+                        forecast_data: forecast_data
+                    });
+                }
+            })
         }
     });
 });

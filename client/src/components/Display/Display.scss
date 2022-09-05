@@ -23,7 +23,7 @@
         font-weight: lighter;
     }
 
-    #description{
+    .description{
         display: flex;
         justify-content: center;
         color: gray;
@@ -78,6 +78,13 @@
     > #bottom-layer{
         margin-bottom: 1rem;
     }
+
+    #weekly_forecast{
+        flex-wrap: wrap;
+        gap: 1em;
+        justify-content: space-around;
+        align-items: center;
+    }
 }
 
 .weather-container{
@@ -89,6 +96,29 @@
         margin: 0 auto 0 auto;
         overflow-y: scroll;
         
+        &::-webkit-scrollbar{
+            display: none;
+        }
+    }
+
+    &-mini{
+        display: block;
+        width: 240px;
+        height: 332px;
+        border: solid;
+        border-radius: 15px;
+        margin: 0 auto 0 auto;
+        overflow-y: scroll;
+
+        .day{
+            color: black;
+            background-color: #6571729b;
+        }
+
+        .description{
+            padding: 0 0 0 0;
+        }
+
         &::-webkit-scrollbar{
             display: none;
         }
@@ -105,7 +135,7 @@
             font-size: 18pt;
         }
 
-        #description{
+        .description{
             font-size: 16pt;
         }
 
@@ -143,7 +173,7 @@
             font-size: 22pt;
         }
 
-        #description{
+        .description{
             font-size: 18pt;
         }
 
