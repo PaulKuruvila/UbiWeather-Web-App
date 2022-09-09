@@ -17,25 +17,39 @@ const Display = props => {
     }
 
     function switchUnit(){
-        let unit_value_current, unit_value_high, unit_value_low;
+        let unit_value_current, unit_value_high, unit_value_low, forecast_value_low, forecast_value_high, forecast_max_temps = [], forecast_min_temps = [];
         if(props.data['temp_unit'] === 'C'){
             unit_value_current = ((props.data['temp_current'] * 9/5) + 32).toFixed(2);
             unit_value_high = ((props.data['temp_high'] * 9/5) + 32).toFixed(2);
-            unit_value_low = ((props.data['temp_low'] * 9/5) + 32).toFixed(2); 
+            unit_value_low = ((props.data['temp_low'] * 9/5) + 32).toFixed(2);
+            // probably (definitely) not the best approach :D
+            for(let i = 0; i < props.data['weather_forecast_temp_max'].length-1; i++){ // subtract 1 from length as last (8th day) value is not used 
+                forecast_value_high = ((props.data['weather_forecast_temp_max'][i] * 9/5) + 32).toFixed(2);
+                forecast_value_low = ((props.data['weather_forecast_temp_min'][i] * 9/5) + 32).toFixed(2);
+                forecast_max_temps[i] = forecast_value_high;
+                forecast_min_temps[i] = forecast_value_low;
+            }
             props.changeDataDisplayed({dataLoaded: true, name:props.data['name'], coord:props.data['coord'], 
                 weather: props.data['weather'], icon: props.data['icon'], temp_current:unit_value_current, 
                 temp_high:unit_value_high, temp_low:unit_value_low, weather_forecast_icon: props.data['weather_forecast_icon'], 
-                weather_forecast_desc: props.data['weather_forecast_desc'], weather_forecast_temp_max: props.data['weather_forecast_temp_max'], 
-                weather_forecast_temp_min: props.data['weather_forecast_temp_min'], weekday: props.data['weekday'], temp_unit: 'F'});
+                weather_forecast_desc: props.data['weather_forecast_desc'], weather_forecast_temp_max: forecast_max_temps, 
+                weather_forecast_temp_min: forecast_min_temps, weekday: props.data['weekday'], temp_unit: 'F'});
         } else if(props.data['temp_unit'] === 'F'){
             unit_value_current = ((props.data['temp_current'] - 32) * 5/9).toFixed(2);
             unit_value_high = ((props.data['temp_high'] - 32) * 5/9).toFixed(2);
             unit_value_low = ((props.data['temp_low'] - 32) * 5/9).toFixed(2);
+            // probably (definitely) not the best approach :D
+            for(let i = 0; i < props.data['weather_forecast_temp_max'].length-1; i++){ // subtract 1 from length as last (8th day) value is not used
+                forecast_value_high = ((props.data['weather_forecast_temp_max'][i] - 32) * 5/9).toFixed(2);
+                forecast_value_low = ((props.data['weather_forecast_temp_min'][i] - 32) * 5/9).toFixed(2);
+                forecast_max_temps[i] = forecast_value_high;
+                forecast_min_temps[i] = forecast_value_low;
+            }
             props.changeDataDisplayed({dataLoaded: true, name:props.data['name'], coord:props.data['coord'], 
                 weather: props.data['weather'], icon: props.data['icon'], temp_current:unit_value_current, 
                 temp_high:unit_value_high, temp_low:unit_value_low, weather_forecast_icon: props.data['weather_forecast_icon'], 
-                weather_forecast_desc: props.data['weather_forecast_desc'], weather_forecast_temp_max: props.data['weather_forecast_temp_max'], 
-                weather_forecast_temp_min: props.data['weather_forecast_temp_min'], weekday: props.data['weekday'], temp_unit: 'C'});
+                weather_forecast_desc: props.data['weather_forecast_desc'], weather_forecast_temp_max: forecast_max_temps, 
+                weather_forecast_temp_min: forecast_min_temps, weekday: props.data['weekday'], temp_unit: 'C'});
         } else {
             console.log("Error. Unexpected unit value received.");
         }
