@@ -55,6 +55,8 @@ app.post("/search", (req, res) => {
                     res.status(404).send(`Error fetching weather forecast data: ${err}`);
                 } else {
                     console.log(forecast_data['daily'][0]['weather']);
+                    let today = new Date();
+                    today = today.getDay();
                     res.send({
                         status: 200,
                         city: `${data['name']}, ${data['sys']['country']}`,
@@ -64,6 +66,7 @@ app.post("/search", (req, res) => {
                         temp_current: data['main']['temp'],
                         temp_high: data['main']['temp_max'],
                         temp_low: data['main']['temp_min'],
+                        day_of_week: today,
                         forecast_data: forecast_data
                     });
                 }
