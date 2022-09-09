@@ -99,6 +99,12 @@
         &::-webkit-scrollbar{
             display: none;
         }
+
+        > div{
+            > p{
+                font-size: 18pt;
+            } 
+        }
     }
 
     &-mini{
@@ -187,6 +193,12 @@
     .weather-container{
         &-main{
             width: 250px;
+
+            > div{
+                > p{
+                    font-size: 16pt;
+                } 
+            }
         }
     }
 }

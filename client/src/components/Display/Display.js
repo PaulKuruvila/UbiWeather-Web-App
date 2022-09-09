@@ -64,13 +64,12 @@ const Display = props => {
             <h1>{props.data['name']}</h1>
             <div className="weather-container-main">
                 <img src={`/weather_icons/${props.data['icon']}.png`} alt="Image not found." />
+                <div style={{'position':'relative', 'top':'-20px'}}>
+                    <p><strong>Current: </strong>{`${props.data['temp_current']}°${props.data['temp_unit']}`}</p>
+                    <p style={{'margin-top':'5px'}}><strong>High: </strong>{`${props.data['temp_high']}°${props.data['temp_unit']}`}</p>
+                    <p style={{'margin-top':'5px'}}><strong>Low: </strong>{`${props.data['temp_low']}°${props.data['temp_unit']}`}</p>
+                </div>
                 <p className="description">{props.data['weather']}</p>
-            </div>
-            <div id="bottom-layer">
-                <h2>Temp</h2>
-                <p>{`Current: ${props.data['temp_current']}°${props.data['temp_unit']}`}</p>
-                <p>{`High: ${props.data['temp_high']}°${props.data['temp_unit']}`}</p>
-                <p>{`Low: ${props.data['temp_low']}°${props.data['temp_unit']}`}</p>
             </div>
             <h2 style={{'border-top': '1px solid #6571729b', 'padding': '1em 0 1em 0'}}>Weekly Forecast</h2>
             <div id="weekly_forecast" style={{display: props.data['dataLoaded'] ? 'flex' : 'none'}}>
