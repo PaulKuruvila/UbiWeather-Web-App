@@ -2,6 +2,10 @@
 
 # dependencies
 /node_modules
+/backend_express/node_modules
+/server/node_modules
+/frontend_react/node_modules
+/client/node_modules
 /.pnp
 .pnp.js
 
@@ -10,9 +14,13 @@
 
 # production
 /build
+/frontend_react/build
+/client/build
 
 # misc
 .DS_Store
+.sample.env
+.env
 .env.local
 .env.development.local
 .env.test.local

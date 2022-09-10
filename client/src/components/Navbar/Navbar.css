@@ -1,0 +1,178 @@
+.NavItems {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #6571729b;
+    min-height: 10vh;
+    white-space: nowrap;
+    z-index: 2;
+    padding-bottom: 1rem;
+}
+
+.Title{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    gap: 0px;
+    margin-right: auto;
+}
+
+.TitleLogo{
+    content:'';
+    background-image: url('/src/images/weather_app_icon.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 75px;
+    width: 75px;
+}
+
+.TitleText{
+    font-size: 35pt;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: lighter;
+}
+
+.Search{
+    display: flex;
+    width: 500px;
+    height: 40px;
+    background-color: white;
+    border-radius: 30px;
+    padding-left: 15px;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.Search > i{
+    font-size: 12pt;
+}
+
+.SearchBar{
+    flex: 1;
+    height: 40px;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+}
+
+.SearchButton{
+    font-size: 12pt;
+    padding: 11px;
+    border:none;
+    border-radius: 30px;
+    color: black;
+    background-color:limegreen;
+    cursor: pointer;
+}
+
+.SearchButton:hover{
+    background-color: green;
+}
+
+.Icons{
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
+    font-size: 30pt;
+    margin-left: auto;
+    margin-right: 2rem;
+}
+
+.fa-github{
+    color: #8DFF6D;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.5843137254901961);
+}
+
+.fa-github:hover{
+    color: rgb(1, 160, 0);
+}
+
+.fa-linkedin{
+    color: #99CCFF;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.5843137254901961);
+}
+
+.fa-linkedin:hover{
+    color: #5CADFF;
+}
+
+@media screen and (max-width: 1020px) {
+    .Search{
+        width: 300px;
+    }
+}
+
+@media screen and (max-width:509px) {
+    .NavItems{
+        padding-bottom: 0px;
+    }
+
+    .Title{
+        margin-right: auto;
+        margin-top: 10px;
+    }
+
+    .TitleText{
+        /* font-size: 25pt; */
+    }
+
+    .TitleLogo{
+        width: 50px;
+        height: 50px;
+    }
+
+    .Search{
+        width: 325px;
+        margin: 15px 40px 0 40px;
+    }
+
+    .Icons{
+        position: relative;
+        bottom: 98px;
+        font-size: 25pt;
+    }
+}
+
+@media screen and (max-width:459px) {
+    .Search{
+        top: 10px;
+        right: 20px;
+        width: 278px;
+        margin-bottom: 40px;
+        margin-left: 20px;
+    }
+
+    .Icons{
+        bottom: 72px;
+        padding-bottom: 0px;
+    }
+}
+
+@media screen and (max-width:449px) {
+    .Search{
+        margin: 20px 1rem 35px 0;
+    }
+
+    .Icons{
+        bottom: -3px;
+        padding-bottom: 20px;
+        margin: 0 0 0 10px;
+    }
+}
+
+@media screen and (max-width:435px) {
+    .Search{
+        margin: 15px 50px 0 50px;
+    }
+
+    .Icons{
+        margin-left: 0px;
+        bottom: -15px;
+        padding-bottom: 25px;
+    }
+}
