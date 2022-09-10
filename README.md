@@ -13,8 +13,6 @@ Please replace "**YOUR_API_KEY_HERE**" below with your generated OpenWeatherMap 
 
 API_KEY = **YOUR_API_KEY_HERE**
 
-## JavaScript Version X.X.X
-
 ## Node Version 16.3.0
 
 ## OpenWeatherMap API documentation
