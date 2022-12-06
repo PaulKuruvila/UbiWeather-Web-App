@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server/index.js",
     "start-dev": "nodemon server/index.js",
-    "build": "nvm install 16.3.0 && cd client && npm install && npm run build",
+    "build": "cd client && npm install && npm run build",
     "build-dev": "cd client && npm run build"
   },
   "keywords": [],
