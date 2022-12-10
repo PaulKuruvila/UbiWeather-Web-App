@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './Display.scss';
 
 const Display = props => {
@@ -63,7 +63,7 @@ const Display = props => {
             </div>
             <h1>{props.data['name']}</h1>
             <div className="weather-container-main">
-                <img src={`/weather_icons/${props.data['icon']}.png`} alt="Image not found." />
+                <img src={`/weather_icons/${props.data['icon']}.png`} alt="Not found." />
                 <div style={{'position':'relative', 'top':'-20px'}}>
                     <p><strong>Current: </strong>{`${props.data['temp_current']}°${props.data['temp_unit']}`}</p>
                     <p style={{'margin-top':'5px'}}><strong>High: </strong>{`${props.data['temp_high']}°${props.data['temp_unit']}`}</p>
@@ -75,7 +75,7 @@ const Display = props => {
             <div id="weekly_forecast" style={{display: props.data['dataLoaded'] ? 'flex' : 'none'}}>
                 <div className="weather-container-mini">
                     <p className="day">{weekdays[getIndex(1)]}</p>
-                    <img src={`weather_icons/${props.data['weather_forecast_icon'][0]}.png`} alt="Image not found." />
+                    <img src={`weather_icons/${props.data['weather_forecast_icon'][0]}.png`} alt="Not found." />
                     <div style={{'position':'relative', 'top':'-20px'}}>
                         <p><strong>H: </strong>{`${props.data['weather_forecast_temp_max'][0]}°${props.data['temp_unit']}`}</p>
                         <p style={{'margin-top':'5px'}}><strong>L: </strong>{`${props.data['weather_forecast_temp_min'][0]}°${props.data['temp_unit']}`}</p>
@@ -84,7 +84,7 @@ const Display = props => {
                 </div>
                 <div className="weather-container-mini">
                     <p className="day">{weekdays[getIndex(2)]}</p>
-                    <img src={`weather_icons/${props.data['weather_forecast_icon'][1]}.png`} alt="Image not found." />
+                    <img src={`weather_icons/${props.data['weather_forecast_icon'][1]}.png`} alt="Not found." />
                     <div style={{'position':'relative', 'top':'-20px'}}>
                         <p><strong>H: </strong>{`${props.data['weather_forecast_temp_max'][1]}°${props.data['temp_unit']}`}</p>
                         <p style={{'margin-top':'5px'}}><strong>L: </strong>{`${props.data['weather_forecast_temp_min'][1]}°${props.data['temp_unit']}`}</p>
@@ -93,7 +93,7 @@ const Display = props => {
                 </div>
                 <div className="weather-container-mini">
                     <p className="day">{weekdays[getIndex(3)]}</p>
-                    <img src={`weather_icons/${props.data['weather_forecast_icon'][2]}.png`} alt="Image not found." />
+                    <img src={`weather_icons/${props.data['weather_forecast_icon'][2]}.png`} alt="Not found." />
                     <div style={{'position':'relative', 'top':'-20px'}}>
                         <p><strong>H: </strong>{`${props.data['weather_forecast_temp_max'][2]}°${props.data['temp_unit']}`}</p>
                         <p style={{'margin-top':'5px'}}><strong>L: </strong>{`${props.data['weather_forecast_temp_min'][2]}°${props.data['temp_unit']}`}</p>
@@ -102,7 +102,7 @@ const Display = props => {
                 </div>
                 <div className="weather-container-mini">
                     <p className="day">{weekdays[getIndex(4)]}</p>
-                    <img src={`weather_icons/${props.data['weather_forecast_icon'][3]}.png`} alt="Image not found." />
+                    <img src={`weather_icons/${props.data['weather_forecast_icon'][3]}.png`} alt="Not found." />
                     <div style={{'position':'relative', 'top':'-20px'}}>
                         <p><strong>H: </strong>{`${props.data['weather_forecast_temp_max'][3]}°${props.data['temp_unit']}`}</p>
                         <p style={{'margin-top':'5px'}}><strong>L: </strong>{`${props.data['weather_forecast_temp_min'][3]}°${props.data['temp_unit']}`}</p>
@@ -111,7 +111,7 @@ const Display = props => {
                 </div>
                 <div className="weather-container-mini">
                     <p className="day">{weekdays[getIndex(5)]}</p>
-                    <img src={`weather_icons/${props.data['weather_forecast_icon'][4]}.png`} alt="Image not found." />
+                    <img src={`weather_icons/${props.data['weather_forecast_icon'][4]}.png`} alt="Not found." />
                     <div style={{'position':'relative', 'top':'-20px'}}>
                         <p><strong>H: </strong>{`${props.data['weather_forecast_temp_max'][4]} °${props.data['temp_unit']}`}</p>
                         <p style={{'margin-top':'5px'}}><strong>L: </strong>{`${props.data['weather_forecast_temp_min'][4]}°${props.data['temp_unit']}`}</p>
@@ -120,7 +120,7 @@ const Display = props => {
                 </div>
                 <div className="weather-container-mini">
                     <p className="day">{weekdays[getIndex(6)]}</p>
-                    <img src={`weather_icons/${props.data['weather_forecast_icon'][5]}.png`} alt="Image not found." />
+                    <img src={`weather_icons/${props.data['weather_forecast_icon'][5]}.png`} alt="Not found." />
                     <div style={{'position':'relative', 'top':'-20px'}}>
                         <p><strong>H: </strong>{`${props.data['weather_forecast_temp_max'][5]}°${props.data['temp_unit']}`}</p>
                         <p style={{'margin-top':'5px'}}><strong>L: </strong>{`${props.data['weather_forecast_temp_min'][5]}°${props.data['temp_unit']}`}</p>
@@ -129,7 +129,7 @@ const Display = props => {
                 </div>
                 <div className="weather-container-mini">
                     <p className="day">{weekdays[getIndex(7)]}</p>
-                    <img src={`weather_icons/${props.data['weather_forecast_icon'][6]}.png`} alt="Image not found." />
+                    <img src={`weather_icons/${props.data['weather_forecast_icon'][6]}.png`} alt="Not found." />
                     <div style={{'position':'relative', 'top':'-20px'}}>
                         <p><strong>H:</strong>{`${props.data['weather_forecast_temp_max'][6]}°${props.data['temp_unit']}`}</p>
                         <p style={{'margin-top':'5px'}}><strong>L: </strong>{`${props.data['weather_forecast_temp_min'][6]}°${props.data['temp_unit']}`}</p>
