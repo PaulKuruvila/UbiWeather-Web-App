@@ -12,11 +12,6 @@
 # testing
 /coverage
 
-# production
-/build
-/frontend_react/build
-/client/build
-
 # misc
 .DS_Store
 .sample.env

@@ -75,9 +75,13 @@ app.post("/search", (req, res) => {
     });
 });
 
-// For any GET requests that are not handled, return to home page (Needs to be last)
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+});
+
+// For any GET requests that are not handled, redirect to "Lost?" page (Needs to be last)
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../client/src', 'lost.html'));
 });
 
 app.listen(port, () => {console.log(`Server started on port ${port}`)});
