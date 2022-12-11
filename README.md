@@ -1,6 +1,6 @@
 # UbiWeather-App
 
-Weather app written in **JavaScript** that utilizes the **React** library for the frontend, **Express** framework for the backend, and **OpenWeatherMap API** for the weather data. This app is deployed via Heroku and is currently hosted at https://ubiweather-app.herokuapp.com.
+Weather app written in **JavaScript** that utilizes the **React** library for the frontend, **Express** framework for the backend, and **OpenWeatherMap API** for the weather data. This app is deployed via Vercel and is currently hosted at https://ubiweather.vercel.app.
 
 ## sample.env
 ***---Please rename this file to ".env"!!---***
